@@ -3,10 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/web/OpenServer/domains/photoalb/controllers/adminController.php</file>
-            <file>file:/C:/web/OpenServer/domains/photoalb/controllers/AlbumController.php</file>
-            <file>file:/C:/web/OpenServer/domains/photoalb/config/routes.php</file>
-            <file>file:/C:/web/OpenServer/domains/photoalb/components/Router.php</file>
+            <file>file:/C:/web/OpenServer/domains/photoalb/views/admin/setname.php</file>
+            <file>file:/C:/web/OpenServer/domains/photoalb/controllers/AdminController.php</file>
+            <file>file:/C:/web/OpenServer/domains/photoalb/views/admin/create.php</file>
+            <file>file:/C:/web/OpenServer/domains/photoalb/components/DataBase.php</file>
         </group>
     </open-files>
 </project-private>

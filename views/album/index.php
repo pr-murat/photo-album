@@ -2,34 +2,7 @@
 
 <div class="mycontent">
     <div class="row">
-        <div class="col-md-3 create-album-link">
-
-            <a href="#"> <button class="btn btn-primary">Управления альбомов</button> </a>
-
-            <!--Iss-->
-            <form class="from-enter">
-                <div class="title-form">Вход с аккаунта</div>
-                
-                <div class="form-group row">
-                  <div class="col-sm-12">
-                    <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
-                  </div>
-                </div>
-                <div class="form-group row">
-                  <div class="col-sm-12">
-                    <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
-                  </div>
-                </div>
-
-
-                <div class="form-group row">
-                  <div class="col-sm-12">
-                    <button type="submit" class="btn btn-primary">Войти</button>
-                  </div>
-                </div>
-              </form>
-            <!--Iss-->
-        </div>
+        <?php require_once(ROOT.'\views\templates\formauth.php');?>
         <div class="col-md-9">
             <div class="row">
                 <div class="col-md-12">

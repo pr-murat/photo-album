@@ -11,10 +11,10 @@
                 <div class="col-md-12">
                     <div class="title-form">Задайвайте имя каждому фотографий</div>
 
-                    <form>
+                    <form method="POST">
                         <div  class="row setname">
                             <div class="img-setname">
-                                <img src="/1.jpg">
+                                <img src="<?= $album_tmp_name ?>">
                                 <div class="col-md-12">
                                     <input placeholder="Название фотографий" class="form-text" type="text" >
                                 </div>
