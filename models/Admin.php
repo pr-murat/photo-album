@@ -64,4 +64,29 @@ class Admin{
     }
 
     
+    
+    public function getListAlbum(){
+        $db = new DataBase();
+        $pdo = $db->connect();
+
+        //Validation--->>>
+        $query = "SELECT * FROM albums";
+        $sttm = $pdo->prepare($query);
+        $sttm->execute(
+            /*array(
+                ':name_album' => $name_album
+                )*/
+            );
+        $arr = $sttm->fetchAll();
+        
+        return $arr;
+        
+        
+        
+        
+        /*echo '<pre>';
+        print_r($arr);
+        echo '</pre>';*/
+    }
+    
 }

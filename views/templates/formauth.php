@@ -1,7 +1,7 @@
 <div class="col-md-3 create-album-link">
 
             <?php if(Authentication::isAuth()){  ?>
-            <a href="#"> <button class="btn btn-primary">Управления альбомов</button> </a>
+                <a href="http://photoalb:<?=PORT?>/admin"> <button class="btn btn-primary">Управления альбомов</button> </a>
             <?php }else{?>
             <!--Iss-->
             

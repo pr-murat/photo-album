@@ -57,30 +57,26 @@
                         <thead class="thead-dark">
                           <tr>
                             <th scope="col">#</th>
-                            <th scope="col">First</th>
-                            <th scope="col">Last</th>
-                            <th scope="col">Handle</th>
+                            <th scope="col">Название альбома</th>
+                            <th scope="col">Описание</th>
+                            <th scope="col">Коли-о фото</th>
+                            <th scope="col">Действия</th>
                           </tr>
                         </thead>
                         <tbody>
+                            
+                        <?php 
+                        $i = 0;
+                        foreach($arr as $value){ $i++; ?>
                           <tr>
-                            <th scope="row">1</th>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>@mdo</td>
+                            <th scope="row"><?=$i;?></th>
+                            <td><?=$value['name_album']?></td>
+                            <td><?=$value['description']?></td>
+                            <td><?=$value['count_img']?></td>
+                            <td><button>Удалить альбом</button><button>Добавить фото</button></td>
                           </tr>
-                          <tr>
-                            <th scope="row">2</th>
-                            <td>Jacob</td>
-                            <td>Thornton</td>
-                            <td>@fat</td>
-                          </tr>
-                          <tr>
-                            <th scope="row">3</th>
-                            <td>Larry</td>
-                            <td>the Bird</td>
-                            <td>@twitter</td>
-                          </tr>
+                          <?php } ?>
+                          
                         </tbody>
                       </table>
                     

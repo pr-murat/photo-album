@@ -9,11 +9,15 @@ class AlbumController{
         $album = new Album;
         $arrayAlbum = $album->getAlbum();
         
-       
         
-        /*echo '<pre>';
-        print_r($arrayAlbum);
-        echo '</pre>';*/
+        
+        
+        
+        
+        
+        
+        
+        
         
         //Render indexView
         include ROOT.'/views/album/index.php';

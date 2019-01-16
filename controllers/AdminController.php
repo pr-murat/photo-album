@@ -1,8 +1,20 @@
 <?php
 class AdminController{
     
+    public function __construct(){
+        include_once ROOT.'/components/Auth.php';
+        if (!Authentication::isAuth()) {
+            echo '<script>location.href = "http://photoalb:'.PORT.'/album"</script>';
+        }
+    }
+    
     //Список альбомов
     public function actionIndex(){
+        include ROOT.'/models/Admin.php';
+        $model = new Admin();
+        
+        $arr = $model->getListAlbum();
+        
         include ROOT.'/views/admin/list.php';
     }
     
@@ -50,4 +62,5 @@ class AdminController{
             exit(ERR_404);
         }
     }
+    
 }
