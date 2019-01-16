@@ -8,40 +8,16 @@
         </div>
         <div class="col-md-9">
             <div class="row">
-                <div class="col-md-12">
-                    <div class="title-form">Задайвайте имя каждому фотографий</div>
-
-                    <form method="POST">
-                        <div  class="row setname">
-                            <div class="img-setname">
-                                <img src="<?= $album_tmp_name ?>">
-                                <div class="col-md-12">
-                                    <input placeholder="Название фотографий" class="form-text" type="text" >
-                                </div>
-                            </div>
-                            <div class="img-setname">
-                                <img src="/1.jpg">
-                                <div class="col-md-12">
-                                    <input class="form-text" type="text" >
-                                </div>
-                            </div>
-                            <div class="img-setname">
-                                <img src="/1.jpg">
-                                <div class="col-md-12">
-                                    <input class="form-text" type="text" >
-                                </div>
-                            </div>
-                            
-                            
-                        </div>
-                        <div class="row">
-                            <button type="submit" class="btn btn-primary" id="btn_create_album">Создать</button>
-                        </div>
-                        
-                     </form>
-                    
-                    
-                </div>
+                
+                <?php
+                if ($successcreatealbum) {
+                    echo 'Альбом успешно создан<br>';
+                }
+                if ($successcreatedimages) {
+                    echo 'Фотографий успешно загружены<br><hr>';
+                }
+                
+                ?>
             </div>
         </div>
     </div>
