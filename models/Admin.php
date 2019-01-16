@@ -7,34 +7,31 @@ class Admin{
     public function createAlbum($name_album,$description,$date,$count_img){
         $db = new DataBase();
         $pdo = $db->connect();
-        
-        
-        //Validation
-        $queryIsExistsAlbum = "SELECT name_album "
-                ."FROM albums WHERE name_album = :name_album";
+
+        //Validation--->>>
+        $queryIsExistsAlbum = "SELECT name_album FROM albums WHERE name_album = :name_album";
         $sttmIsExistsAlbum = $pdo->prepare($queryIsExistsAlbum);
         $existsAlbum = $sttmIsExistsAlbum->execute(array(':name_album' => $name_album));
         $exist = $sttmIsExistsAlbum->rowCount();
-        echo $count_img;
-        if ($count_img == 0) {
-            exit("Выберите фотографий");
-        }
+        $count_img;
         
+        //Проверка наличии выбранных фотографии
+        if ($count_img == 0) {exit("Выберите фотографий 0");}
+        
+        //Проверка отсутствие Альбома
         if ($exist == 1 || ($count_img==0)) {
-            exit("Такой Альбом сущ");
+            exit("Переименуйте им альбома. Существует альбом таким именем");
         }
-        
+        //Validation---<<<
         
         $query = "INSERT INTO albums(name_album, description, date, count_img)"
                 ."VALUES (:name_album, :description, :date, :count_img); ";
         $sttm = $pdo->prepare($query);
         $successcreatealbum = $sttm->execute(
-                array(
-                    ':name_album' => $name_album,
+                array(':name_album' => $name_album,
                     ':description' => $description,
                     ':date' => $date,
-                    ':count_img'=> $count_img
-                )
+                    ':count_img'=> $count_img)
             );
             if (!$successcreatealbum) {
                 exit('Error : no created Album');
@@ -51,7 +48,7 @@ class Admin{
         $set_name_img = $_POST[$name]; 
         move_uploaded_file($album_tmp_name, $target);
 
-        $query = "INSERT INTO images (parent_album_id, name_img, set_name_img, size, date)"
+        $query = "INSERT INTO images (parent_album_id, name_img, set_name_img, size, date) "
                 . "VALUES (:parent_album_id, :name_img, :set_name_img, :size, now())";
 
         $sttm = $pdo->prepare($query); 
@@ -65,4 +62,6 @@ class Admin{
              ));
          return $succes;
     }
+
+    
 }

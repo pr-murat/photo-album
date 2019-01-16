@@ -1,6 +1,5 @@
 <?php include ROOT.'/views/templates/main.php' ?>
 
-
 <div class="mycontent">
     <div class="row">
         <div class="col-md-3 create-album-link">
@@ -16,7 +15,6 @@
                 if ($successcreatedimages) {
                     echo 'Фотографий успешно загружены<br><hr>';
                 }
-                
                 ?>
             </div>
         </div>
